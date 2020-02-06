@@ -1,0 +1,542 @@
+{
+  "$id": "http://example.com/createLearningExperience_REQUEST.json",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+        "learningModel",
+        "resources",
+        "resourcePlan",
+        "assetGraph",
+        "configuration",
+        "constraints",
+        "extends",
+        "extensions",
+        "scope"
+   ],
+   "properties": {
+        "expiresOn": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "label": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string"
+        },
+        "_docType": {
+          "$ref": "#/definitions/DocumentType_Enum"
+        },
+        "_assetType": {
+          "$ref": "#/definitions/AssetType_Enum"
+        },
+        "assetClass": {
+          "type": "string"
+        },
+        "objectives": {
+          "type": "string"
+        },
+        "groups": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "learningModel": {
+          "$ref": "#/definitions/AssetRelationshipSubmission"
+        },
+        "resources": {
+          "$ref": "#/definitions/AssetResourceArraySubmission"
+        },
+        "assetGraph": {
+          "$ref": "#/definitions/AssetGraphSubmission"
+        },
+        "resourcePlan": {
+          "$ref": "#/definitions/ResourcePlanSubmission"
+        },
+        "configuration": {
+          "type": "object"
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "extends": {
+          "type": "object",
+          "required": [
+            "sources"
+          ],
+          "properties": {
+            "sources": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/AssetRelationshipSubmission"
+              }
+            }
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/AssetRelationshipSubmission"
+            }
+          }
+        },
+        "extensions": {
+          "type": "object"
+        },
+        "scope": {
+          "type": "object"
+        }
+      },
+  "definitions": {
+     
+    "LongRunningOperationSubmission": {
+      "type": "object",
+      "required": [
+        "callbackStrategy"
+      ],
+      "properties": {
+        "callbackStrategy": {
+          "type": "string",
+          "enum": [
+            "NOT_REQUIRED",
+            "REQUIRED",
+            "ON_ERROR"
+          ]
+        },
+        "callbackUrl": {
+          "type": "string",
+          "format": "url"
+        }
+      }
+    },
+    "ContentCategory_Enum": {
+      "type": "string",
+      "enum": [
+        "image",
+        "narrative",
+        "audio",
+        "video",
+        "evidence"
+      ]
+    },
+    "AssetResourceArraySubmission": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "$ref": "#/definitions/AssetRelationshipSubmission"
+          },
+          {
+            "$ref": "#/definitions/ResourceRelationshipSubmission"
+          },
+          {
+            "$ref": "#/definitions/AssetInlinedResource"
+          }
+        ]
+      }
+    },
+    "AssetResourceArray": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReducedObject"
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "$ref": "#/definitions/AssetRelationship"
+              },
+              {
+                "$ref": "#/definitions/ResourceRelationship"
+              },
+              {
+                "$ref": "#/definitions/AssetInlinedResource"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "AssetGraph": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReducedObject"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/AssetGraphItem"
+          }
+        }
+      ]
+    },
+    "AssetGraphSubmission": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AssetGraphItem"
+      }
+    },
+    "ResourcePlan": {
+      "oneOf": [
+        {
+          "$ref": "#/definitions/ReducedObject"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourcePlanItem"
+          }
+        }
+      ]
+    },
+    "ResourcePlanSubmission": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ResourcePlanItem"
+      }
+    },
+    "AssetGraphItem": {
+      "type": "object",
+      "required": [
+        "startNode",
+        "endNode",
+        "relationships"
+      ],
+      "properties": {
+        "startNode": {
+          "type": "string"
+        },
+        "endNode": {
+          "type": "string"
+        },
+        "relationships": {
+          "type": "object"
+        }
+      }
+    },
+    "ResourcePlanItem": {
+      "type": "object",
+      "required": [
+        "label",
+        "resourceElementType",
+        "resourceRef",
+        "resourceElements"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "resourceElementType": {
+          "type": "string"
+        },
+        "resourceRef": {
+          "type": "string"
+        },
+        "resourceElements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ResourcePlanItem"
+          }
+        }
+      }
+    },
+    "ResourceRelationshipSubmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "_id",
+        "_bssVer",
+        "_ver"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        }
+      }
+    },
+    "ResourceRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "_id",
+        "_bssVer",
+        "_ver",
+        "_links"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        },
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "AssetRelationshipSubmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "_docType",
+        "_assetType",
+        "_id",
+        "_bssVer",
+        "_ver"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "_docType": {
+          "$ref": "#/definitions/DocumentType_Enum"
+        },
+        "_assetType": {
+          "$ref": "#/definitions/AssetType_Enum"
+        },
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        }
+      }
+    },
+    "AssetRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "_docType",
+        "_assetType",
+        "_id",
+        "_bssVer",
+        "_ver",
+        "_links"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "_docType": {
+          "$ref": "#/definitions/DocumentType_Enum"
+        },
+        "_assetType": {
+          "$ref": "#/definitions/AssetType_Enum"
+        },
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        },
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "DocumentType_Enum": {
+      "type": "string",
+      "enum": [
+        "LEARNINGASSET",
+        "LEARNINGCONTENT",
+        "LEARNINGENGAGEMENT",
+        "LEARNINGPOLICY",
+        "LEARNINGMODEL"
+      ]
+    },
+    "ResourceType_Enum": {
+      "type": "string",
+      "enum": [
+        "LEARNINGASSET",
+        "CONTENT",
+        "INLINED"
+      ]
+    },
+    "AssetType_Enum": {
+      "type": "string",
+      "enum": [
+        "NARRATIVE",
+        "ASSESSMENT-ITEM",
+        "INSTRUCTION",
+        "ASSESSMENT",
+        "TOOL",
+        "AGGREGATE",
+        "PRODUCT",
+        "LEARNINGEXPERIENCE",
+        "ENGAGEMENTPLAN",
+        "USERENGAGEMENT"
+      ]
+    },
+    "HalLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "object",
+            "required": [
+              "href"
+            ],
+            "properties": {
+              "href": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "href"
+              ],
+              "properties": {
+                "href": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "HalEmbedded": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "ReducedObject": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_links"
+      ],
+      "properties": {
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "InlinedResource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "category",
+        "data"
+      ],
+      "properties": {
+        "category": {
+          "$ref": "#/definitions/ContentCategory_Enum"
+        },
+        "model": {
+          "type": "string"
+        },
+        "data": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    "AssetInlinedResource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "category",
+        "data"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "category": {
+          "$ref": "#/definitions/ContentCategory_Enum"
+        },
+        "model": {
+          "type": "string"
+        },
+        "data": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

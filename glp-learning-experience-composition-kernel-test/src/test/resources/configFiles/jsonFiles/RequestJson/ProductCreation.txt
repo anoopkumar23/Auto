@@ -1,0 +1,99 @@
+{
+  "asset": {
+    "contentMetadata": {
+      "id": "ContentID",
+      "version": "ContentVersion"
+    },
+    "secondaryIndexes": {
+      "foreignId": [
+        "8883c099-1762-43fe-9ad8-4c9aaa6eafa2"
+      ]
+    },
+    "learningModel": {
+      "_resourceType": "LEARNINGASSET",
+      "_docType": "LEARNINGMODEL",
+      "_assetType": "PRODUCT",
+      "_id": "LearningModelIDnew",
+      "_bssVer": 1,
+      "createdBy": "Admin",
+      "_ver": "LearningModelIDversion",
+      "_links": {
+        "self": {
+          "href": "/v2/productModels/32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f/versions/810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        }
+      }
+    },
+    "tags": "REVEL",
+    "label": "ProductLabel",
+    "language": "en-US",
+    "assetClass": "",
+    "objectives": "",
+        "createdBy": "Admin",
+    "groups": {
+      
+    },
+    "resources": {
+      "32f42ce8": {
+        "_id": "ResourcesID1",
+        "_bssVer": 1,
+        "_ver": "ResourcesVer1",
+        "_resourceType": "LEARNINGASSET",
+        "_docType": "LEARNINGCONTENT",
+        "_assetType": "ResourcesLable" ,
+        "_links": {
+          "self": {
+            "href": "/v2/aggregates/32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f/versions/810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+          }
+        }
+      }
+    },
+    "assetGraph": [
+      {
+        "startNode": "self",
+        "endNode": "32f42ce8",
+        "relationships": {
+          
+        }
+      },
+      {
+        "startNode": "32f42ce8",
+        "endNode": "self",
+        "relationships": {
+          
+        }
+      }
+    ],
+    "resourcePlan": [
+      {
+        "label": "PRODUCT",
+        "resourceElementType": "HEADING",
+        "resourceRef": "",
+        "resourceElements": [
+          {
+            "label": "INDEX",
+            "resourceElementType": "INDEX",
+            "resourceElements": [
+              
+            ],
+            "resourceRef": "32f42ce8"
+          }
+        ]
+      }
+    ],
+    "configuration": {
+      
+    },
+    "constraints": [
+      
+    ],
+    "extends": {
+      
+    },
+    "extensions": {
+      
+    },
+    "scope": {
+      
+    }
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "$id": "http://example.com/getLearningExperienceCollection_OK_RESPONSE.json",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "count",
+    "learningExperiences",
+    "_links"
+  ],
+  "properties": {
+    "count": {
+      "type": "integer"
+    },
+    "learningExperiences": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "$ref": "#/definitions/LearningExperienceCollectionItem"
+      }
+    },
+    "_links": {
+      "$ref": "#/definitions/HalLinks"
+    }
+  },
+  "definitions": {
+    "LearningExperienceStatus_Enum": {
+      "type": "string",
+      "enum": [
+        "COMPOSED",
+        "REVIEWED",
+        "PRE_PUBLISHED",
+        "PUBLISHED",
+        "PRE_AVAILABLE",
+        "AVAILABLE",
+        "PRE_ENGAGED",
+        "ENGAGED",
+        "PAUSED",
+        "COMPLETED",
+        "ABORTED",
+        "ARCHIVED",
+        "PRE_COMPOSED"
+      ]
+    },
+    "LearningExperienceCollectionItem": {
+      "type": "object",
+      "required": [
+        "_id",
+        "_bssVer",
+        "_ver",
+        "label",
+        "_status",
+        "_links"
+      ],
+      "properties": {
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672,"
+        },
+        "label": {
+          "type": "string"
+        },
+        "_status": {
+          "$ref": "#/definitions/LearningExperienceStatus_Enum"
+        },
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "AssetRelationship": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "_resourceType",
+        "_docType",
+        "_assetType",
+        "_id",
+        "_bssVer",
+        "_ver",
+        "_links"
+      ],
+      "properties": {
+        "_resourceType": {
+          "$ref": "#/definitions/ResourceType_Enum"
+        },
+        "_docType": {
+          "$ref": "#/definitions/DocumentType_Enum"
+        },
+        "_assetType": {
+          "$ref": "#/definitions/AssetType_Enum"
+        },
+        "_id": {
+          "type": "string",
+          "format": "uuid",
+          "example": "32f42ce8-61dd-4bbc-bba5-1fdc03a0af9f"
+        },
+        "_bssVer": {
+          "type": "integer",
+          "format": "int64",
+          "example": 1
+        },
+        "_ver": {
+          "type": "string",
+          "format": "uuid",
+          "example": "810a3768-17af-4f2f-9d4c-b07c6cdfc672"
+        },
+        "_links": {
+          "$ref": "#/definitions/HalLinks"
+        }
+      }
+    },
+    "DocumentType_Enum": {
+      "type": "string",
+      "enum": [
+        "LEARNINGASSET",
+        "LEARNINGCONTENT",
+        "LEARNINGENGAGEMENT",
+        "LEARNINGPOLICY",
+        "LEARNINGGRAPH",
+        "LEARNINGMODEL"
+      ]
+    },
+    "ResourceType_Enum": {
+      "type": "string",
+      "enum": [
+        "LEARNINGASSET",
+        "CONTENT",
+        "INLINED"
+      ]
+    },
+    "AssetType_Enum": {
+      "type": "string",
+      "enum": [
+        "NARRATIVE",
+        "ASSESSMENT-ITEM",
+        "INSTRUCTION",
+        "ASSESSMENT",
+        "TOOL",
+        "AGGREGATE",
+        "PRODUCT",
+        "LEARNINGEXPERIENCE",
+        "ENGAGEMENTPLAN",
+        "USERENGAGEMENT"
+      ]
+    },
+    "HalLinks": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "object",
+            "required": [
+              "href"
+            ],
+            "properties": {
+              "href": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "href"
+              ],
+              "properties": {
+                "href": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+ "expiresOn" : "2018-05-18T19:16:15+00:00",
+ "label" : "REVEL",
+ "tags" : "",
+ "language" : "en",
+ "assetClass" : "COORDINATORCOURSE",
+ "objectives" : "",
+ "groups" : {},
+ "learningModel" : {
+   "_id" : "fffceb72-049d-4290-be42-ef9b96a72fcc",
+   "_bssVer" : 1,
+   "_ver" : "8b7f871c-b8c5-467b-a0cf-950078ef4d3a"
+ },
+ "resources" : {
+    "COURSETITLE" : {
+     "_resourceType":"INLINED",
+     "category" : "narrative",
+     "data" : "REVEL",
+     "model" : "COURSETITLE"
+   },
+   "COURSETYPE" : {
+     "_resourceType" : "INLINED",
+     "category" : "narrative",
+     "data" : "REVEL",
+     "model" : "COURSETYPE"
+   },
+   "COURSEAVATAR": {
+     "_resourceType": "INLINED",
+     "category": "image",
+     "data": "http://url",
+     "model": "COURSEAVATAR"
+   } 
+ },
+ "assetGraph" : [],
+ "resourcePlan" : [ {
+   "label" : "****Selected by the Instructor****",
+   "resourceElementType" : "INLINED",
+   "resourceRef" : "COURSETITLE",
+   "resourceElements" : []
+ }, {
+   "label" : "****Selected by the Instructor****",
+   "resourceElementType" : "INLINED",
+   "resourceRef" : "COURSETYPE",
+   "resourceElements" : []
+ },
+ {
+   "label" : "****Selected by the Instructor****",
+   "resourceElementType" : "INLINED",
+   "resourceRef" : "COURSEAVATAR",
+   "resourceElements" : []
+ }
+ ],
+ "configuration" : {},
+ "constraints" : [],
+ "extends": {
+       "sources": [
+           {
+               "_resourceType": "INLINED",
+               "_docType": "LEARNINGCONTENT",
+               "_assetType": "PRODUCT",
+               "_id" : "24821226-f6f3-40a3-a3d5-89075ce36156",
+				"_bssVer" : 1,
+				"_ver" : "d97a46ea-6f40-4913-9591-cf8d506c3541"
+           }
+       ]
+   
+ },
+ "extensions" : {
+   "sectionId": "hellhellagfcf",
+   "sectionCode": "123213",
+   "externalId": "4324",
+   "organizationId": "42323"    
+ },
+ "scope" : {}
+}

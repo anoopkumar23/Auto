@@ -1,0 +1,90 @@
+{
+	"_assetType": "assetTypeNew",
+	"expiresOn": "2020-12-12T18:29:50.588Z",
+	"label": "assetTypeNew",
+	"createdBy": "Admin",
+	"tags": "REVEL",
+	"language": "en_US",
+	"assetClass": "",
+	"objectives": "",
+	"groups": {
+		
+	},
+	"secondaryIndexes": {
+		
+	},
+	"resources": {
+		"d441ee2a-4475-4511-969c-80cbbeba553e": {
+			"_resourceType": "INLINED",
+			"category": "model",
+			"data": {
+				"keyPattern": "keyPatternNew",
+				"categorySchema": {
+					"type": "object",
+					"minProperties": minresources,
+					"maxProperties": maxresources
+				},
+				"instanceSchema": {
+					"type": "object",
+					"required": ["_docType",
+					"_assetType"],
+					"properties": {
+						"_resourceType": {
+							"type": "string",
+							"enum": ["LEARNINGASSET"]
+						},
+						"_docType": {
+							"type": "string",
+							"enum": ["LEARNINGCONTENT"]
+						},
+						"_assetType": {
+							"type": "string",
+							"enum": ["AGGREGATE"]
+						}
+					}
+				},
+				"instanceModel": {
+					"_id": "ff3de5a6-6008-4e2f-a8df-489480040397",
+					"_bssVer": 1,
+					"_ver": "8d63b292-43aa-4e8f-90cc-24282dc71ada",
+					"_resourceType": "LEARNINGASSET",
+					"_docType": "LEARNINGMODEL",
+					"_assetType": "assetTypeNew"
+				}
+			}
+		}
+	},
+	"assetGraph": [{
+		"startNode": "self",
+		"endNode": "d441ee2a-4475-4511-969c-80cbbeba553e",
+		"relationships": {
+			
+		}
+	},
+	{
+		"startNode": "d441ee2a-4475-4511-969c-80cbbeba553e",
+		"endNode": "self",
+		"relationships": {
+			
+		}
+	}],
+	"resourcePlan": [{
+		"label": "SLATE",
+		"resourceElementType": "SLATE",
+		"resourceRef": "d441ee2a-4475-4511-969c-80cbbeba553e",
+		"resourceElements": []
+	}],
+	"configuration": {
+		
+	},
+	"constraints": [],
+	"extends": {
+		
+	},
+	"extensions": {
+		
+	},
+	"scope": {
+		
+	}
+}

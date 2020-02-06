@@ -1,0 +1,126 @@
+{
+
+   "label": "REVEL",
+
+   "assetClass": "ASSIGNMENT",
+
+   "resources": {
+
+     "ASSIGNMENTTITLE": {
+
+       "_resourceType": "INLINED",
+
+       "category": "narrative",
+
+       "data":"This is the Assignment Title"
+
+       },
+
+     "STDNT-MSG-51b84752-1614-4ddd-ad7a-f488f165b663": {
+
+       "_resourceType": "INLINED",
+
+       "category": "abstract",
+
+       "model": "assignment-message",
+
+        "data": {
+
+                                             "message":"This is the Assignment Message"
+
+                  }
+
+     }
+
+   },
+
+   "assetGraph": [],
+
+   "resourcePlan": [
+
+     {
+
+       "label": "this is label",
+
+       "resourceElementType": "AssignmentTitle",
+
+       "resourceRef": "ASSIGNMENTTITLE",
+
+       "resourceElements": []
+
+     },
+
+     {
+
+       "label": "this is label",
+
+       "resourceElementType": "AssignmentMessage",
+
+       "resourceRef": "STDNT-MSG-51b84752-1614-4ddd-ad7a-f488f165b663",
+
+       "resourceElements": []
+
+     }    
+
+   ],
+
+   "configuration": {
+
+   "policyGroups": [
+
+     "REVEL",
+
+     "COURSE_a7e0f322-c96c-46b7-9001-8439e2583ff0",
+
+     "ASSIGNMENT_31def4f6-4412-4e3d-929d-b053793a6c21"
+
+   ]
+
+   },
+
+   "constraints": [],
+
+   "extensions":{},
+
+   "extends": {},
+
+   "scope": {
+
+       "group": "OWNER",
+
+       "visibility": "PUBLIC",
+
+       "assets": [
+
+       {
+
+           "_resourceType": "LEARNINGASSET",
+
+           "_docType": "LEARNINGENGAGEMENT",
+
+           "_assetType": "LEARNINGEXPERIENCE",
+
+           "_id": "73f34b38-4244-4215-bb5a-6362dbe25ba6",
+
+           "_bssVer": 1,
+
+           "_ver": "9862d707-f20b-4eac-8930-47e43a19afdf"
+
+       }
+
+       ]
+
+   },
+
+   "learningModel": {
+
+    
+     "_id": "4eeac9bf-806a-4a3e-9cfd-c29b297f3814",
+
+     "_bssVer": 1,
+
+     "_ver": "e291a2e7-1ac1-4e22-88f3-15b7f6887369"
+
+   }
+
+}

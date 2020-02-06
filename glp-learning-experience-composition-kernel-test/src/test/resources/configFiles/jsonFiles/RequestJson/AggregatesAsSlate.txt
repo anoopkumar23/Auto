@@ -1,0 +1,98 @@
+{
+	"assets": [{
+		"contentMetadata": {
+			"id": "ContentID",
+			"version": "ContentVersion"
+		},
+		"secondaryIndexes": {
+			"foreignId": ["8883c099-1762-43fe-9ad8-4c9aaa6eafa2"]
+		},
+		"learningModel": {
+			"_resourceType": "LEARNINGASSET",
+			"_docType": "LEARNINGMODEL",
+			"_assetType": "assetTypeNew",
+			"_id": "LearningModelIDnew",
+			"_bssVer": 1,
+			"createdBy": "Admin",
+			"_ver": "LearningModelIDversion",
+			"_links": {
+				"self": {
+					"href": "/v2/assetModels/aed7e8cc-3634-4af3-bc64-5a7130d203cf/versions/6b211b26-1bc7-4abb-8056-0b3b137afbab"
+				}
+			}
+		},
+		"tags": "REVEL",
+		"label": "InstructionLabel",
+		"language": "en-US",
+		"assetClass": "",
+		"objectives": "",
+		"createdBy": "Admin",
+		"groups": {
+			
+		},
+		"resources": {
+			"32f42ce8": {
+				"_id": "ResourcesID1",
+				"_bssVer": 1,
+				"_ver": "ResourcesVer1",
+				"createdBy": "Admin",
+				"_resourceType": "LEARNINGASSET",
+				"_docType": "LEARNINGCONTENT",
+				"_assetType": "ResourcesLable"
+			},
+			"32f42ce9": {
+				"_id": "ResourcesID2",
+				"_bssVer": 1,
+				"_ver": "ResourcesVer2",
+				"createdBy": "Admin",
+				"_resourceType": "LEARNINGASSET",
+				"_docType": "LEARNINGCONTENT",
+				"_assetType": "ResourcesLable"
+			}
+		},
+		"assetGraph": [{
+			"startNode": "self",
+			"endNode": "32f42ce8",
+			"relationships": {
+				
+			}
+		},
+		{
+			"startNode": "32f42ce8",
+			"endNode": "32f42ce9",
+			"relationships": {
+				
+			}
+		}],
+		"resourcePlan": [{
+			"label": "BLOCK",
+			"resourceElementType": "HEADING",
+			"resourceRef": "",
+			"resourceElements": [{
+				"label": "slate1",
+				"resourceElementType": "slate",
+				"resourceElements": [],
+				"resourceRef": "32f42ce8"
+			},
+			{
+				"label": "slate2",
+				"resourceElementType": "slate",
+				"resourceElements": [],
+				"resourceRef": "32f42ce9"
+			}]
+		}],
+		"configuration": {
+			
+		},
+		"constraints": [],
+		"extends": {
+			
+		},
+		"extensions": {
+			
+		},
+		"scope": {
+			
+		}
+	}]
+}

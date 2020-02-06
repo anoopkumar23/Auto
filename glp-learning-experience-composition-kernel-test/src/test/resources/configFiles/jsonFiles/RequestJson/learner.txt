@@ -1,0 +1,13 @@
+{
+	"firstName":"fname",
+	"lastName":"Test",
+	"email":"abhishek.sharda@pearson.com",
+	"userName":"name",
+	"password":"Password11",
+	"authGroupName":"auth_group",
+	"institutionId":"57b4ca0c77c871c9e082274b",
+	"productType":"PanPearson",
+	"fromInvite":false,
+	"clientId":"KCpjnbqANB0RkI8aohz5uRBMAGeN5FGA",
+	"sectionId":"5a3a2460e4b05b48d72d3b89"
+}
