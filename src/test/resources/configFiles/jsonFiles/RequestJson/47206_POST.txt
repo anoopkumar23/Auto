@@ -1,5 +1,0 @@
-{
- "previousState": "previousState1",
- "transitionState": "transitionState1",
- "reasons": "reasons1"
-}

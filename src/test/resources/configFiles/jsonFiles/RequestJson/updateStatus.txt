@@ -1,5 +1,0 @@
-{
- "previousState": "COMPOSED",
- "transitionState": "PUBLISHED",
- "reasons": "null"
-}
